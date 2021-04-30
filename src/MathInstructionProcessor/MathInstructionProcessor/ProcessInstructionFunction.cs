@@ -14,16 +14,16 @@ using static MathInstructionProcessor.Common.Generic;
 
 namespace MathInstructionProcessor
 {
-    public static class ProcessInstructionFunction
+    public class ProcessInstructionFunction
     {
         [FunctionName("ProcessInstruction")]
-        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req, ILogger log)
+        public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req, ILogger log)
         {
             log?.LogTrace($"ProcessInstruction received request");
 
             try
             {
-                double result = await ProcessInstruction(req, log);
+                double result = ProcessInstruction(req, log);
                 return new OkObjectResult(result);
             }
             catch (InvalidInstructionException ex)
@@ -38,7 +38,7 @@ namespace MathInstructionProcessor
             }
         }
 
-        private static async Task<double> ProcessInstruction(HttpRequest req, ILogger log)
+        private double ProcessInstruction(HttpRequest req, ILogger log)
         {
             double result = 0;
 
@@ -99,11 +99,11 @@ namespace MathInstructionProcessor
             return result;
         }
 
-        private static (long position, string line) GetLastLineFromFile(IFormFile file, ILogger log)
+        private (long position, string line) GetLastLineFromFile(IFormFile file, ILogger log)
         {
             try
             {
-                //This would have been easier using the System IO File object
+                //This would have been more efficient using the System IO File object
                 string line = "";
                 long linePosition = 0;
 
@@ -133,13 +133,13 @@ namespace MathInstructionProcessor
             }
         }
 
-        private static IFormFile LoadFileFromForm(HttpRequest req)
+        private IFormFile LoadFileFromForm(HttpRequest req)
         {
             var file = req.Form.Files["instructionsfile"];
             return file;
         }
 
-        private static double Calculate(double currentValue, Instruction currentInstruction, long linePosition)
+        private double Calculate(double currentValue, Instruction currentInstruction, long linePosition)
         {
             switch (currentInstruction.Operation)
             {
@@ -165,7 +165,7 @@ namespace MathInstructionProcessor
             return currentValue;
         }
 
-        private static Instruction ParseInstruction(string textInstruction, long linePosition)
+        private Instruction ParseInstruction(string textInstruction, long linePosition)
         {
             if (string.IsNullOrWhiteSpace(textInstruction))
             {

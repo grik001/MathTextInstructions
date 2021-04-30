@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathInstructionProcessor", "MathInstructionProcessor\MathInstructionProcessor.csproj", "{B6095285-5688-4A82-9D43-2BBBB1D71702}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathInstructionProcessor", "MathInstructionProcessor\MathInstructionProcessor.csproj", "{B6095285-5688-4A82-9D43-2BBBB1D71702}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathInstructionProcessor.Common", "MathInstructionProcessor.Common\MathInstructionProcessor.Common.csproj", "{4C6FFB47-9BC7-4701-97AD-F3BF62A66201}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathInstructionProcessor.Common", "MathInstructionProcessor.Common\MathInstructionProcessor.Common.csproj", "{4C6FFB47-9BC7-4701-97AD-F3BF62A66201}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathInstructionProcessor.Unit.Tests", "MathInstructionProcessor.Unit.Tests\MathInstructionProcessor.Unit.Tests.csproj", "{A1AAEA8C-2FAF-4AF6-A886-6E5686A17CDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4C6FFB47-9BC7-4701-97AD-F3BF62A66201}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C6FFB47-9BC7-4701-97AD-F3BF62A66201}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C6FFB47-9BC7-4701-97AD-F3BF62A66201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1AAEA8C-2FAF-4AF6-A886-6E5686A17CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1AAEA8C-2FAF-4AF6-A886-6E5686A17CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1AAEA8C-2FAF-4AF6-A886-6E5686A17CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1AAEA8C-2FAF-4AF6-A886-6E5686A17CDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
