@@ -103,7 +103,7 @@ namespace MathInstructionProcessor
             try
             {
                 //This would have been more efficient using the System IO File object
-                string line = "";
+                string line = string.Empty;
                 long linePosition = 0;
 
                 using (Stream readStream = file.OpenReadStream())
