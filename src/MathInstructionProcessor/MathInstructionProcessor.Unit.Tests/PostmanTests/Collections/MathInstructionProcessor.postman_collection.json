@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "2560cbd2-d555-4e0c-ba20-f020f1f1f8aa",
+		"name": "MathInstructionProcessor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ProcessInstruction_Valid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Value is correct\", function () {\r",
+							"    pm.response.to.have.body(\"115.0\");\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "instructionsfile",
+							"type": "file",
+							"src": "instructions_Valid.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mathinstructionprocessor.azurewebsites.net/api/ProcessInstruction?code=pVunvjk/8jKHpKtQf3hc//AXT3ME8zW6nSgDCKFOdISTYxqcLvshhQ==",
+					"protocol": "https",
+					"host": [
+						"mathinstructionprocessor",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"ProcessInstruction"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "pVunvjk/8jKHpKtQf3hc//AXT3ME8zW6nSgDCKFOdISTYxqcLvshhQ=="
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProcessInstruction_Valid_ExtraSpaces",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Value is correct\", function () {\r",
+							"    pm.response.to.have.body(\"115.0\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "instructionsfile",
+							"type": "file",
+							"src": "instructions_Valid_ExtraSpaces.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mathinstructionprocessor.azurewebsites.net/api/ProcessInstruction?code=pVunvjk/8jKHpKtQf3hc//AXT3ME8zW6nSgDCKFOdISTYxqcLvshhQ==",
+					"protocol": "https",
+					"host": [
+						"mathinstructionprocessor",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"ProcessInstruction"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "pVunvjk/8jKHpKtQf3hc//AXT3ME8zW6nSgDCKFOdISTYxqcLvshhQ=="
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProcessInstruction_Valid_BigValue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Value is correct\", function () {\r",
+							"    pm.response.to.have.body(\"107374182465.0\");\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "instructionsfile",
+							"type": "file",
+							"src": "instructions_Valid_BiggerInt.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mathinstructionprocessor.azurewebsites.net/api/ProcessInstruction?code=pVunvjk/8jKHpKtQf3hc//AXT3ME8zW6nSgDCKFOdISTYxqcLvshhQ==",
+					"protocol": "https",
+					"host": [
+						"mathinstructionprocessor",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"ProcessInstruction"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "pVunvjk/8jKHpKtQf3hc//AXT3ME8zW6nSgDCKFOdISTYxqcLvshhQ=="
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProcessInstruction_Invalid_DivideBy0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Value is correct\", function () {\r",
+							"    pm.response.to.have.body(\"Divide by 0 detected in file at line position: 3\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "instructionsfile",
+							"type": "file",
+							"src": "instructions_Invalid_DivideByZero.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mathinstructionprocessor.azurewebsites.net/api/ProcessInstruction?code=pVunvjk/8jKHpKtQf3hc//AXT3ME8zW6nSgDCKFOdISTYxqcLvshhQ==",
+					"protocol": "https",
+					"host": [
+						"mathinstructionprocessor",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"ProcessInstruction"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "pVunvjk/8jKHpKtQf3hc//AXT3ME8zW6nSgDCKFOdISTYxqcLvshhQ=="
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProcessInstruction_Invalid_MissingApply",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Missing Apply detected\", function () {\r",
+							"    pm.response.to.have.body(\"Last operation in the file has to always be of type \\\"apply\\\"\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "instructionsfile",
+							"type": "file",
+							"src": "instructions_Invalid_MissingApply.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mathinstructionprocessor.azurewebsites.net/api/ProcessInstruction?code=pVunvjk/8jKHpKtQf3hc//AXT3ME8zW6nSgDCKFOdISTYxqcLvshhQ==",
+					"protocol": "https",
+					"host": [
+						"mathinstructionprocessor",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"ProcessInstruction"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "pVunvjk/8jKHpKtQf3hc//AXT3ME8zW6nSgDCKFOdISTYxqcLvshhQ=="
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProcessInstruction_Invalid_NoFile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Missing Apply detected\", function () {\r",
+							"    pm.response.to.have.body(\"Last operation in the file has to always be of type \\\"apply\\\"\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "instructionsfile",
+							"type": "file",
+							"src": "instructions_Invalid_MissingApply.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://mathinstructionprocessor.azurewebsites.net/api/ProcessInstruction?code=pVunvjk/8jKHpKtQf3hc//AXT3ME8zW6nSgDCKFOdISTYxqcLvshhQ==",
+					"protocol": "https",
+					"host": [
+						"mathinstructionprocessor",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"ProcessInstruction"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "pVunvjk/8jKHpKtQf3hc//AXT3ME8zW6nSgDCKFOdISTYxqcLvshhQ=="
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

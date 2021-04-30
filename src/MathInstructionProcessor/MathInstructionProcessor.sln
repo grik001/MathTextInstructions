@@ -9,22 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathInstructionProcessor.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathInstructionProcessor.Unit.Tests", "MathInstructionProcessor.Unit.Tests\MathInstructionProcessor.Unit.Tests.csproj", "{A1AAEA8C-2FAF-4AF6-A886-6E5686A17CDB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MathInstructionsProcessor.Postman.Tests", "MathInstructionsProcessor.Postman.Tests", "{DC939D83-95D4-4C82-A58C-A47962082ED0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{37462A9A-4A29-4F80-9692-89F72CA6D170}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\..\Postman\files\instructions_Invalid_DivideByZero.txt = ..\..\..\..\..\Postman\files\instructions_Invalid_DivideByZero.txt
-		..\..\..\..\..\Postman\files\instructions_Invalid_MissingApply.txt = ..\..\..\..\..\Postman\files\instructions_Invalid_MissingApply.txt
-		..\..\..\..\..\Postman\files\instructions_Valid.txt = ..\..\..\..\..\Postman\files\instructions_Valid.txt
-		..\..\..\..\..\Postman\files\instructions_Valid_BiggerInt.txt = ..\..\..\..\..\Postman\files\instructions_Valid_BiggerInt.txt
-		..\..\..\..\..\Postman\files\instructions_Valid_ExtraSpaces.txt = ..\..\..\..\..\Postman\files\instructions_Valid_ExtraSpaces.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PostmanCollections", "PostmanCollections", "{93F32E00-72AA-4C3E-9BE8-2E6D6F491DF6}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\MathInstructionProcessor.postman_collection.json = ..\..\..\..\MathInstructionProcessor.postman_collection.json
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,10 +30,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{37462A9A-4A29-4F80-9692-89F72CA6D170} = {DC939D83-95D4-4C82-A58C-A47962082ED0}
-		{93F32E00-72AA-4C3E-9BE8-2E6D6F491DF6} = {DC939D83-95D4-4C82-A58C-A47962082ED0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23CDD25E-300E-434C-B94F-06C5B909C12E}
