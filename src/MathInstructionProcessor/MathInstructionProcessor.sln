@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathInstructionProcessor", "MathInstructionProcessor\MathInstructionProcessor.csproj", "{B6095285-5688-4A82-9D43-2BBBB1D71702}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6095285-5688-4A82-9D43-2BBBB1D71702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6095285-5688-4A82-9D43-2BBBB1D71702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6095285-5688-4A82-9D43-2BBBB1D71702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6095285-5688-4A82-9D43-2BBBB1D71702}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23CDD25E-300E-434C-B94F-06C5B909C12E}
+	EndGlobalSection
+EndGlobal
