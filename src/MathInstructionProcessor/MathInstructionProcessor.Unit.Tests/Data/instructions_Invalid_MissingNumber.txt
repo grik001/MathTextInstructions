@@ -1,0 +1,5 @@
+Add 1
+subtract 2
+Multiply 
+divide 2  
+apply 24 

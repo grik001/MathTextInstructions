@@ -1,0 +1,5 @@
+Add 21474836470
+subtract 1
+Multiply 10.0000
+divide 2  
+apply 24 

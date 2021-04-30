@@ -1,5 +1,0 @@
-add 1
-subtract 2
-MUltiply 10.0000
-divide 2
-apply 24

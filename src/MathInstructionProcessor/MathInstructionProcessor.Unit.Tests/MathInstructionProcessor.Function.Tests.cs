@@ -12,10 +12,15 @@ using Xunit;
 
 namespace MathInstructionProcessor.Unit.Tests
 {
-    public class UnitTest1
+    public class ProcessInstruction_Tests
     {
-        [Fact]
-        public async Task ProcessInstruction_ValidData()
+        [Theory]
+        [InlineData(115.0, "instructions_Valid.txt")]
+        [InlineData(15.0, "instructions_Valid_Uppercase.txt")]
+        [InlineData(45.0, "instructions_Valid_Lowercase.txt")]
+        [InlineData(115.0, "instructions_Valid_ExtraSpaces.txt")]
+        [InlineData(107374182465.0, "instructions_Valid_BiggerInt.txt")]
+        public async Task ProcessInstruction_ValidData(double expectedValue, string fileName)
         {
             Mock<ILogger> mockLogger = new Mock<ILogger>();
 
@@ -25,8 +30,8 @@ namespace MathInstructionProcessor.Unit.Tests
             ProcessInstructionFunction function = new ProcessInstructionFunction();
             var setup = mockRequest.SetupSequence(x => x.Form.Files["instructionsfile"].OpenReadStream());
 
-            setup.Returns(() => RetrieveStreamForInstructionsFile("instructions1.txt"));
-            setup.Returns(() => RetrieveStreamForInstructionsFile("instructions1.txt"));
+            setup.Returns(() => RetrieveStreamForInstructionsFile(fileName));
+            setup.Returns(() => RetrieveStreamForInstructionsFile(fileName));
 
             //Run
             IActionResult result = await function.Run(mockRequest.Object, mockLogger.Object);
@@ -34,8 +39,38 @@ namespace MathInstructionProcessor.Unit.Tests
             //Assert Result
             var response = result as OkObjectResult;
             Assert.Equal(200, response.StatusCode);
-            Assert.Equal(115.00, response.Value);
-            //mockHttpHelper.Verify(x => x.PostAsync<StringContent, HttpResponseMessage>(It.Is<string>(x => x == "https://prod-117.westeurope.logic.azure.com/workflows/01fb5e472fd8476bb8f197b53de65a02/runs/08585856323751261468026327562CU160/actions/Wait_for_execution/run?api-version=2016-06-01&sp=%2Fruns%2F08585856323751261468026327562CU160%2Factions%2FWait_for_execution%2Frun%2C%2Fruns%2F08585856323751261468026327562CU160%2Factions%2FWait_for_execution%2Fread&sv=1.0&sig=DBTnyszO7MwAnk1O6njIcgejjPWndNoRb3QeuAwIrgg"), It.IsAny<HttpContent>(), It.IsAny<Dictionary<string, string>>()), Times.Exactly(1));
+            Assert.Equal(expectedValue, response.Value);
+        }
+
+        [Theory]
+        [InlineData("Last operation in the file has to always be of type \"apply\"", "instructions_Invalid_MissingApply.txt")]
+        [InlineData("The operation supplied is invalid at line position: 0", "instructions_Invalid_InvalidCommand.txt")]
+        [InlineData("Invalid input detected at line position: 2", "instructions_Invalid_MissingNumber.txt")]
+        [InlineData("Invalid input detected at line position: 3", "instructions_Invalid_MissingOperation.txt")]
+        [InlineData("Invalid input detected at line position: 0", "instructions_Invalid_ExtraSeperator.txt")]
+        [InlineData("The numeric value has to be of type double at line position: 3", "instructions_Invalid_LetterInsteadOfNumber.txt")]
+        [InlineData("Divide by 0 detected in file at line position: 3", "instructions_Invalid_DivideByZero.txt")]
+        [InlineData("Empty line detected at line position: 2", "instructions_Invalid_EmptyLine.txt")]
+        public async Task ProcessInstruction_InvalidData(string expectedErrorValue, string fileName)
+        {
+            Mock<ILogger> mockLogger = new Mock<ILogger>();
+
+            //Setup Request
+            Mock<HttpRequest> mockRequest = new Mock<HttpRequest>();
+
+            ProcessInstructionFunction function = new ProcessInstructionFunction();
+            var setup = mockRequest.SetupSequence(x => x.Form.Files["instructionsfile"].OpenReadStream());
+
+            setup.Returns(() => RetrieveStreamForInstructionsFile(fileName));
+            setup.Returns(() => RetrieveStreamForInstructionsFile(fileName));
+
+            //Run
+            IActionResult result = await function.Run(mockRequest.Object, mockLogger.Object);
+
+            //Assert Result
+            var response = result as BadRequestObjectResult;
+            Assert.Equal(400, response.StatusCode);
+            Assert.Equal(expectedErrorValue, response.Value);
         }
 
         private static Stream RetrieveStreamForInstructionsFile(string fileName)
