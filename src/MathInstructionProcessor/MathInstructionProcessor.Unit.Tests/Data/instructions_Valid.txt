@@ -1,0 +1,5 @@
+Add 1
+subtract 2
+Multiply 10.0000
+divide 00000000000000000002  
+apply 24 

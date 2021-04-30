@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Data\instructions_Invalid_DivideByZero.txt" />
+    <None Remove="Data\instructions_Invalid_EmptyLine.txt" />
+    <None Remove="Data\instructions_Invalid_ExtraSeperator.txt" />
+    <None Remove="Data\instructions_Invalid_InvalidCommand.txt" />
+    <None Remove="Data\instructions_Invalid_LetterInsteadOfNumber.txt" />
+    <None Remove="Data\instructions_Invalid_MissingApply.txt" />
+    <None Remove="Data\instructions_Invalid_MissingNumber.txt" />
+    <None Remove="Data\instructions_Invalid_MissingOperation.txt" />
+    <None Remove="Data\instructions_Valid.txt" />
+    <None Remove="Data\instructions_Valid_BiggerInt.txt" />
+    <None Remove="Data\instructions_Valid_ExtraSpaces.txt" />
+    <None Remove="Data\instructions_Valid_Lowercase.txt" />
+    <None Remove="Data\instructions_Valid_Uppercase.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\instructions_Invalid_MissingOperation.txt" />
+    <EmbeddedResource Include="Data\instructions_Invalid_EmptyLine.txt" />
+    <EmbeddedResource Include="Data\instructions_Invalid_MissingNumber.txt" />
+    <EmbeddedResource Include="Data\instructions_Invalid_InvalidCommand.txt" />
+    <EmbeddedResource Include="Data\instructions_Invalid_ExtraSeperator.txt" />
+    <EmbeddedResource Include="Data\instructions_Invalid_LetterInsteadOfNumber.txt" />
+    <EmbeddedResource Include="Data\instructions_Invalid_DivideByZero.txt" />
+    <EmbeddedResource Include="Data\instructions_Valid_BiggerInt.txt" />
+    <EmbeddedResource Include="Data\instructions_Valid_ExtraSpaces.txt" />
+    <EmbeddedResource Include="Data\instructions_Invalid_MissingApply.txt" />
+    <EmbeddedResource Include="Data\instructions_Valid_Lowercase.txt" />
+    <EmbeddedResource Include="Data\instructions_Valid_Uppercase.txt" />
+    <EmbeddedResource Include="Data\instructions_Valid.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="Moq" Version="4.16.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="1.3.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MathInstructionProcessor.Common\MathInstructionProcessor.Common.csproj" />
+    <ProjectReference Include="..\MathInstructionProcessor\MathInstructionProcessor.csproj" />
+  </ItemGroup>
+
+</Project>
