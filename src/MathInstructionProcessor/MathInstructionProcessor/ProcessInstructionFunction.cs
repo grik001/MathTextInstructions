@@ -80,10 +80,10 @@ namespace MathInstructionProcessor
                     do
                     {
                         string line = reader.ReadLine();
-                        log?.LogTrace($"Starting process for line at {linePosition}: {line}");
-
                         if (line == null || applyLine.position == linePosition)
                             break;
+
+                        log?.LogTrace($"Starting process for line at {linePosition}: {line}");
 
                         Instruction currentInstruction = ParseInstruction(line, linePosition);
 
