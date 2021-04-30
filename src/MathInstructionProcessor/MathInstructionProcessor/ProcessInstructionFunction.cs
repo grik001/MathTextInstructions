@@ -49,7 +49,6 @@ namespace MathInstructionProcessor
             {
                 log?.LogWarning($"ProcessInstruction was not executed due to file not being part of the request");
                 throw new InvalidInstructionException("Request expects an instructions file");
-
             }
 
             //get last line from file and set the value as the starting value
@@ -114,7 +113,6 @@ namespace MathInstructionProcessor
                         do
                         {
                             string currentline = reader.ReadLine();
-
                             if (currentline == null)
                                 break;
 
