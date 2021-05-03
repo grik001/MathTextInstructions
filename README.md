@@ -8,7 +8,7 @@ The below instructions are to be included in a text file and sent to the Functio
 
 **URL**: {functionUrl}/api/ProcessInstruction  
 **HTTP Request Type**: POST  
-**Body Type**: form-data
+**Body Type**: form-data  
 **Key**: instructionsfile  
 **Value**: {fileName}.txt  
 **Sample Content**:  
