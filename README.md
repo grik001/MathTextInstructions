@@ -1,10 +1,46 @@
 # MathTextInstructions
 
-The Azure Function will parse an instructions file and process the mathematical instructions. The file is expected to be passed within the body with the key "instructionsfile".
+The MathTextInstructions Azure Function parses an instructions file and processes the mathematical instructions. 
+
+### ProcessInstruction 
+
+#### Request
+
+The below instructions are to be included in a text file and sent to the Function via a POST.
+
+**URL**: {functionUrl}/api/ProcessInstruction  
+**HTTP Request Method**: POST  
+**Body Type**: form-data  
+**Key**: instructionsfile  
+**Value**: {fileName}.txt  
+**Sample Content**:  
+
+`Add 1`  
+`subtract 2`  
+`Multiply 10.00`  
+`divide 02`  
+`apply 24`  
+
+#### Response
+
+There are 2 types of responses that this Function is expected to return.
+
+- A valid response which will always include a **200 OK** result along with the calculated answer 
+- A **400 BadRequest** along with the cause of the error
+
+###### Successful Response:
+
+**Status**: 200 OK  
+**Response Body**: 20.00
+
+###### BadRequest Response:
+
+**Status**: 400 BadRequest  
+**Response Body**: The operation supplied is invalid at line position: 4 
 
 ## Unit Tests
 
-All Unit tests can be found inside the MathInstructionProcessor.Unit.Tests project. Below is a list of all the tests being carried out.
+All Unit tests can be found inside the MathInstructionProcessor.Unit.Tests project. Below is a list of all the tests being executed.
 
 - Basic file with all instructions
 - A huge file with over a million instructions
