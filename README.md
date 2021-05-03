@@ -2,12 +2,14 @@
 
 The MathTextInstructions Azure Function parses an instructions file and processes the mathematical instructions. 
 
-### ProcessInstruction Request
+### ProcessInstruction 
+
+#### Request
 
 The below instructions are to be included in a text file and sent to the Function via a POST.
 
 **URL**: {functionUrl}/api/ProcessInstruction  
-**HTTP Request Type**: POST  
+**HTTP Request Method**: POST  
 **Body Type**: form-data  
 **Key**: instructionsfile  
 **Value**: {fileName}.txt  
@@ -18,6 +20,24 @@ The below instructions are to be included in a text file and sent to the Functio
 `Multiply 10.00`  
 `divide 02`  
 `apply 24`  
+
+#### Response
+
+There are 3 types of responses that this Function returns.
+
+-A valid response which will always include a **200 OK** result along with the method
+-A **400 BadRequest** along with the cause of the error
+-Unhandled exceptions
+
+Successful Response:
+
+**Status**: 200 OK  
+**Response Body**: 20.00
+
+BadRequest Response:
+
+**Status**: 400 BadRequest
+**Response Body**: The operation supplied is invalid at line position: 4
 
 ## Unit Tests
 
