@@ -6,18 +6,17 @@ The Azure Function will parse an instructions file and process the mathematical 
 
 The below instructions are to be included in a text file and sent to the Function via a POST.
 
+**URL**: {functionUrl}/api/ProcessInstruction  
+**HTTP Request Type**: POST  
+**Key**: instructionsfile  
+**Value**: {fileName}.txt  
+**Sample Content**:  
 
-**URL**: {functionUrl}/api/ProcessInstruction
-**HTTP Request Type**: POST
-**Key**: instructionsfile
-**Value**: {fileName}.txt
-**Sample Content**:
-
-`Add 1
-subtract 2
-Multiply 10.00
-divide 02  
-apply 24`
+`Add 1`  
+`subtract 2`  
+`Multiply 10.00`  
+`divide 02`  
+`apply 24`  
 
 ## Unit Tests
 
