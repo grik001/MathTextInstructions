@@ -16,6 +16,7 @@ namespace MathInstructionProcessor.Unit.Tests
     {
         [Theory]
         [InlineData(115.0, "instructions_Valid.txt")]
+        [InlineData(814883.5, "instructions_Valid_Big.txt")]
         [InlineData(15.0, "instructions_Valid_Uppercase.txt")]
         [InlineData(45.0, "instructions_Valid_Lowercase.txt")]
         [InlineData(115.0, "instructions_Valid_ExtraSpaces.txt")]
