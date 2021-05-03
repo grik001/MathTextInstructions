@@ -29,12 +29,12 @@ There are 3 types of responses that this Function can return.
 - A **400 BadRequest** along with the cause of the error
 - Unhandled exceptions
 
-Successful Response:
+###### Successful Response:
 
 **Status**: 200 OK  
 **Response Body**: 20.00
 
-BadRequest Response:
+###### BadRequest Response:
 
 **Status**: 400 BadRequest
 **Response Body**: The operation supplied is invalid at line position: 4
