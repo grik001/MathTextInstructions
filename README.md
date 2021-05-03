@@ -2,6 +2,23 @@
 
 The Azure Function will parse an instructions file and process the mathematical instructions. The file is expected to be passed within the body with the key "instructionsfile".
 
+### ProcessInstruction Request
+
+The below instructions are to be included in a text file and sent to the Function via a POST.
+
+URL: {functionUrl}/api/ProcessInstruction
+HTTP Request Type: POST
+
+Key: instructionsfile
+Value: {fileName}.txt
+Sample Content:
+
+Add 1
+subtract 2
+Multiply 10.00
+divide 02  
+apply 24 
+
 ## Unit Tests
 
 All Unit tests can be found inside the MathInstructionProcessor.Unit.Tests project. Below is a list of all the tests being carried out.
