@@ -23,11 +23,10 @@ The below instructions are to be included in a text file and sent to the Functio
 
 #### Response
 
-There are 3 types of responses that this Function can return.
+There are 2 types of responses that this Function is expected to return.
 
 - A valid response which will always include a **200 OK** result along with the calculated answer 
 - A **400 BadRequest** along with the cause of the error
-- Unhandled exceptions
 
 ###### Successful Response:
 
@@ -36,8 +35,8 @@ There are 3 types of responses that this Function can return.
 
 ###### BadRequest Response:
 
-**Status**: 400 BadRequest
-**Response Body**: The operation supplied is invalid at line position: 4
+**Status**: 400 BadRequest  
+**Response Body**: The operation supplied is invalid at line position: 4 
 
 ## Unit Tests
 
