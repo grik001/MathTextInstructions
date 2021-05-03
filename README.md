@@ -21,6 +21,11 @@ All Unit tests can be found inside the MathInstructionProcessor.Unit.Tests proje
 - Divide by Zero check
 - An empty line between instructions
 
+The tests specified in the requirments file are included with the following tests:
+
+- instructions_Valid_Lowercase
+- instructions_Valid_Uppercase
+
 ## Integration Tests
 
 The postman tests can be found in the **MathInstructionProcessor.Unit.Tests** project under the folder "PostmanTests".
