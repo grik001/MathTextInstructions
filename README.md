@@ -1,6 +1,6 @@
 # MathTextInstructions
 
-The Azure Function will parse an instructions file and process the mathematical instructions. The file is expected to be passed within the body with the key "instructionsfile".
+The MathTextInstructions Azure Function parses an instructions file and processes the mathematical instructions. 
 
 ### ProcessInstruction Request
 
