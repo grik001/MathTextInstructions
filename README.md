@@ -16,12 +16,12 @@ All Unit tests can be found inside the MathInstructionProcessor.Unit.Tests proje
 - Instructions file with an invalid command such as "addddddd"
 - Instructions file with no numeric value supplied after the command
 - Instructions file with no command supplied
-- Command line with an extra seperator
+- Command line with an extra separator
 - Invalid value instead of the expected numeric value
 - Divide by Zero check
 - An empty line between instructions
 
-The tests specified in the requirments file are included with the following tests:
+The tests specified in the requirements  file are included with the following tests:
 
 - instructions_Valid_Lowercase
 - instructions_Valid_Uppercase
