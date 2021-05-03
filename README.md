@@ -21,7 +21,7 @@ The below instructions are to be included in a text file and sent to the Functio
 
 ## Unit Tests
 
-All Unit tests can be found inside the MathInstructionProcessor.Unit.Tests project. Below is a list of all the tests being carried out.
+All Unit tests can be found inside the MathInstructionProcessor.Unit.Tests project. Below is a list of all the tests being executed.
 
 - Basic file with all instructions
 - A huge file with over a million instructions
