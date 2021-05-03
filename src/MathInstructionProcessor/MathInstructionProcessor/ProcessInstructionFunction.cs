@@ -28,12 +28,12 @@ namespace MathInstructionProcessor
             }
             catch (InvalidInstructionException ex)
             {
-                log.LogWarning(ex, "Invalid operation sent to ProcessInstruction");
+                log?.LogWarning(ex, "Invalid operation sent to ProcessInstruction");
                 return new BadRequestObjectResult(ex.Message);
             }
             catch (Exception ex)
             {
-                log.LogError(ex, "Unhandled exception triggered");
+                log?.LogError(ex, "Unhandled exception triggered");
                 throw;
             }
         }
@@ -103,6 +103,7 @@ namespace MathInstructionProcessor
             try
             {
                 //This would have been more efficient using the System IO File object
+                //Instead of looping I would prefer reading the last line directly but this cannot be done without saving the file
                 string line = string.Empty;
                 long linePosition = 0;
 

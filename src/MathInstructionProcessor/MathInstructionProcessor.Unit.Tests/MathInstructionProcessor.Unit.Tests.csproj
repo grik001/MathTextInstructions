@@ -16,6 +16,7 @@
     <None Remove="Data\instructions_Invalid_MissingNumber.txt" />
     <None Remove="Data\instructions_Invalid_MissingOperation.txt" />
     <None Remove="Data\instructions_Valid.txt" />
+    <None Remove="Data\instructions_Valid_Big.txt" />
     <None Remove="Data\instructions_Valid_BiggerInt.txt" />
     <None Remove="Data\instructions_Valid_ExtraSpaces.txt" />
     <None Remove="Data\instructions_Valid_Lowercase.txt" />
@@ -30,12 +31,13 @@
     <EmbeddedResource Include="Data\instructions_Invalid_ExtraSeperator.txt" />
     <EmbeddedResource Include="Data\instructions_Invalid_LetterInsteadOfNumber.txt" />
     <EmbeddedResource Include="Data\instructions_Invalid_DivideByZero.txt" />
+    <EmbeddedResource Include="Data\instructions_Valid.txt" />
     <EmbeddedResource Include="Data\instructions_Valid_BiggerInt.txt" />
     <EmbeddedResource Include="Data\instructions_Valid_ExtraSpaces.txt" />
     <EmbeddedResource Include="Data\instructions_Invalid_MissingApply.txt" />
     <EmbeddedResource Include="Data\instructions_Valid_Lowercase.txt" />
     <EmbeddedResource Include="Data\instructions_Valid_Uppercase.txt" />
-    <EmbeddedResource Include="Data\instructions_Valid.txt" />
+    <EmbeddedResource Include="Data\instructions_Valid_Big.txt" />
   </ItemGroup>
 
   <ItemGroup>
