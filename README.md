@@ -25,9 +25,9 @@ The below instructions are to be included in a text file and sent to the Functio
 
 There are 3 types of responses that this Function returns.
 
--A valid response which will always include a **200 OK** result along with the method
--A **400 BadRequest** along with the cause of the error
--Unhandled exceptions
+- A valid response which will always include a **200 OK** result along with the method
+- A **400 BadRequest** along with the cause of the error
+- Unhandled exceptions
 
 Successful Response:
 
